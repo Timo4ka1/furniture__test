@@ -1,0 +1,227 @@
+body{
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+}
+$maincolor: #44C697;
+$textcolor: #1E2E36;;
+
+.button{
+    button {
+      --color: #44C697;
+      font-family: 'Proxima Nova';
+      display: inline-block;
+      width: 278px;
+      height: 51px;
+      line-height: 2.5em;
+      overflow: hidden;
+      margin: 20px;
+      font-size: 17px;
+      z-index: 1;
+      color: var(--color);
+      border: 2px solid var(--color);
+      border-radius: 6px;
+      position: relative;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    button::before {
+      position: absolute;
+      content: "";
+      background: var(--color);
+      width: 400px;
+      height: 250px;
+      z-index: -1;
+      border-radius: 50%;
+    }
+    
+    button:hover {
+      color: white;
+    }
+    
+    button:before {
+      top: 100%;
+      left: 100%;
+      transition: .3s all;
+    }
+    
+    button:hover::before {
+      top: -40px;
+      left: -70px;
+    }
+    }
+
+    .title{
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+      font-size: 48px;
+      margin-bottom: 52px;
+
+      &::before{
+        content: "";
+        background-color: #44C697;
+        width: 25px;
+        height: 48px;
+        z-index: -1;
+        margin-right: -15px;
+      }
+    }
+
+    @media (max-width: 1836px){
+    .title{
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+      font-size: 38px;
+      margin-bottom: 46px;
+    }
+
+    .title::before{
+      content: "";
+      background-color: #44C697;
+      width: 20px;
+      height: 40px;
+      z-index: -1;
+      margin-right: -15px;
+    }
+  }
+
+    .cards{
+    display: flex;
+    justify-content: space-between;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .card{
+      max-width: 586px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      &__billet{
+        padding: 5px 15px;
+        color: #fff;
+        text-transform: uppercase;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        font-size: 18px;
+      }
+
+        .gray{
+          background-color: #1E2E36;
+        }
+
+        .red{
+          background-color: #FF1B1B;
+          top: 45px
+        }
+
+      img{
+        margin-bottom: 10px;
+        position: relative;
+        max-width: 100%;
+      }
+
+      &__text{
+        color: $textcolor;
+        font-size: 24px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.3s ease;
+        padding: 10px 10px;
+      }
+
+      .card__prices{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      &__newprice{
+        color: #FF1B1B;
+      }
+
+      &__oldprice{
+        color: #BCBDBB;
+        font-size: 18px;
+        text-decoration: line-through;
+      }
+
+      &:hover{
+
+        .card__text{
+          color: #fff;
+          transform: translateY(-40px);
+          background-color: #44C697;
+        }
+
+        .card__newprice,
+        .card__oldprice{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1836px){
+      .cards{
+        justify-content: space-around;
+        grid-template-columns: repeat(3, 1fr);
+
+        .card{
+          max-width: 480px;
+
+          &__text{
+            font-size: 22px;
+          }
+
+          &__oldprice{
+            font-size: 16px;
+          }
+        }
+      }
+  }
+
+  @media (max-width: 1228px) {
+    .cards{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+}
+
+@media (max-width: 490px){
+  .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .card__text{
+      gap: 5px;
+        .card__title{
+          font-size: 18px;
+        }
+
+        .card__price{
+          font-size: 18px;
+        }
+
+        .card__newprice{
+          font-size: 20px;
+        }
+
+        .card__oldprice{
+          font-size: 14px;
+        }
+
+        .card__prices{
+          display: flex;
+          align-items: center;
+        }
+    }
+  }
+}

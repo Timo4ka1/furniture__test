@@ -1,0 +1,9 @@
+.wrapper{
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+}
+
+.wrapper > main{
+   flex-grow: 1
+}
